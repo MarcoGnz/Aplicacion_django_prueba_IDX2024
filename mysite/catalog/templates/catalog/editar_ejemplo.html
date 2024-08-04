@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Ejemplo{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Editar Ejemplo: {{ ejemplo.nombre }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="{% url 'lista_ejemplos' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}
